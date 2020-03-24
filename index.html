@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+<style>
+body {
+	background-color: black;
+	color: white;	
+	font-family: "Merriweather", serif;
+}
+button {
+	animation-name: btnUnHover;
+	animation-duration: 0.3s;
+	background-color: black;
+	color: white;
+	border: 1px solid white;
+	font-size: 25px;
+	display: inline-block;
+}
+button:hover {
+	animation-name: btnHover;
+	animation-duration: 0.3s;
+	background-color: white;
+	color: black;
+}
+@keyframes btnHover {
+	from {
+		background-color: black;
+		color: white;
+	}
+	to {
+		background-color: white;
+		color: black;
+	}
+}
+@keyframes btnUnHover {
+	from {
+		background-color: white;
+		color: black;
+	}
+	to {
+		background-color: black;
+		color: white;
+	}
+}
+a {
+	text-decoration: none;
+}
+#twitter {
+	color: #55acee;
+}
+#insta {
+	color: #e4405f;
+}
+</style>
+</head>
+<body>
+<h1>a dark alley</h1>
+<div id="log">
+</div>
+<button id="startBtn" onclick="startBtn_()">Start</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+var startBtn;
+$().ready(function() {
+	//function typing_effect(where, what) {
+	//	var c = $("<p></p>");
+	//	where.append(c);
+	//	var i = 0;
+	//	function a() {
+	//		c.text(c.text()+what[i]);
+	//		i++;
+	//		if (i !== what.length){
+	//			setTimeout(a, 70);
+	//		}
+	//	};
+	//	a();
+	//}
+	function typing_effect(where, what) {
+		let c = $(`<p>${what}</p>`)
+			.addClass("typ-text")
+			.css({"display": "none"});
+		where.append(c);
+		c.fadeIn(1000);
+	};
+	var start = "Welcome! This is A Dark Alley, a game primarily inspired by A Dark Room and other choice-based games." +
+		" Better with headphones.";
+	typing_effect($("#log"), start);
+	startBtn_ = function() {
+			let ambience = new Audio();
+			ambience.src = "./ambient.mp3";
+			ambience.addEventListener('ended', function() {
+				this.play();
+			}, false);
+			ambience.play();
+			$("#startBtn").remove();
+			$("#log").empty();
+			let story_path_1 = [
+			    "You're walking down a dark alley. You don't remember who you are, where you're from or how you got here.",
+			    "You wonder why nobody else is here. It's eerily quiet.",
+			    "You feel hungry. There are some trash cans. There is also a cat moving stealthily out of the alley.",
+			];
+			function delayTyping(i, v, islast, f) {
+				setTimeout(function() {
+					let c = $(`<p>${v}</p>`).css({"display": "none"});
+					$("#log").append(c);
+					if (islast) {c.fadeIn(1000, f)}
+					else {c.fadeIn(1000)};
+				}, i * 1700);
+			};
+			for (let i = 0; i < story_path_1.length; i++) {
+				if (i === story_path_1.length-1) {
+					delayTyping(i, story_path_1[i], true, createTheButtons);
+				} else delayTyping(i, story_path_1[i], false, 0);
+			}
+			//$("#log").fadeOut(1500);
+			//$("#log").html("<div>");
+			//$("#log").show();
+			function trashStory() {
+				let rc = Math.floor((Math.random() * 100) + 1);
+				//if (rc > 50) {
+					let story_event = [
+						"You rummaged the trash. It didn't contain any food.",
+						"You decided to follow the cat.",
+					];
+					for (let i = 0; i < story_event.length; i++) {
+						if (i === story_event.length - 1) {
+							delayTyping(i, story_event[i], true, catStory);
+						} else delayTyping(i, story_event[i], false, 0)
+					}
+				//}
+			}
+			function catStory() {
+				$("#log").fadeOut(1000, function() {
+					$("#log").empty();
+					$("#log").fadeIn("fast");
+					let story_event = [
+				        "You follow the cat through twisted twilight shadows.",
+				        "Your hunger ever gnaws at you.",
+				        "Suddenly, the cat crawls near your feet, and drops a slimy item.",
+				        "You just ate a fish.",
+				        "..The cat seems to have taken a liking to you.",
+		                "You have now got a friend. It lies purring contentedly on your lap.",
+		                "He will be with you wherever you go.",
+			        ];
+			        for (let i = 0; i < story_event.length; i++) {
+			        	if (i === story_event.length-1) {
+			        		delayTyping(i, story_event[i], true, endOfGameWIP);	
+			        	} else if (i === 4) {
+			        		ambience.pause();
+			        		let cat = new Audio();
+			        		cat.src = "./cat.mp3";
+			        		cat.play();
+			        	} else delayTyping(i, story_event[i], false, 0);
+					}	
+				});
+			}
+			function endOfGameWIP() {
+				$("#log").fadeOut(1000, function() {
+					$("#log").empty();
+					$("#log").fadeIn("fast");
+					let story_event = [
+				        "There are four directions for you to go to.",
+		                "West of you lies the highway.",
+		                "North, as you can see, houses the apartments.",
+		                "South lies a canopy of concrete.",
+		                "East is the railway.",
+		                "Whither shall you go?",
+			        ];
+			        for (let i = 0; i < story_event.length; i++) {
+			        	if (i === story_event.length-1) {
+			        		delayTyping(i, story_event[i], true, function() {
+			        			$("#log").fadeOut(1000, function() {
+			        				$("#log").empty();
+			        				$("#log").fadeIn("fast");
+			        				delayTyping(0, "<span style='color: red;'>END.</span>\nGame created by Vikram Durai. Twitter: <a href='https://twitter.com/vikramvdurai' id='twitter'>@vikramvdurai</a>, Instagram: <a href='https://instagram.com/vikramsinstaacount' id='insta'>@vikramsinstaacount.", false, 0);
+			        			});
+			        		})
+			        	} else {
+			        		delayTyping(i, story_event[i], false, 0);
+			        	}
+					}		
+				});
+			};
+			function imagiNation() {
+				$("#log").fadeOut(1000, function() {
+					$("#log").empty();
+					$("#log").fadeIn("fast");
+					story_event = [
+				        "You decide to fly on the wings of your imagination.",
+				        "You walk out of the alley."
+				    ];
+				    for (let i = 0; i < story_event.length; i++) {
+  				       	if (i === story_event.length-1) {
+  				       		delayTyping(i, story_event[i], true, certainDeath);	
+  				       	} else delayTyping(i, story_event[i], false, 0);
+  					}	
+				});
+			}
+			function certainDeath() {
+				$("#log").fadeOut(1000, function() {
+					$("#log").empty();
+					$("#log").show();
+					setTimeout(function() {
+						story_event = [
+							"You are promptly hit by a truck.",
+							"<span style='color: red;'>The End.</span>",
+							"Game created by Vikram Durai. Twitter: <a href='https://twitter.com/vikramvdurai' id='twitter'>@vikramvdurai</a>, Instagram: <a href='https://instagram.com/vikramsinstaacount' id='insta'>@vikramsinstaacount."
+						]
+						let endMusic = new Audio();
+						ambience.pause();
+						endMusic.src = "./end-sound.mp3";
+						endMusic.play();
+						for (let i = 0; i < story_event.length; i++) {
+							delayTyping(i, story_event[i], false, 0);
+						}
+					}, 1000)
+				})
+			}
+			function createTheButtons() {
+				let choice1 = $("<button>Scrounge the trash cans for food</button><br><br>")
+					.addClass("choice")
+					.on("click", trashStory);
+				let choice2 = $("<button>Follow the cat</button><br><br>")
+					.addClass("choice")
+					.on("click", catStory);
+				let _choice = $("<button>Walk out of the alley</button><br><br>")
+					.addClass("choice")
+					.on("click", imagiNation);
+				$("#log").append([choice1, choice2, _choice]);
+				$(".choice").hide();
+				$(".choice").fadeIn(5000);
+				console.log("appended all");
+			}
+	};
+});
+</script>
+</body>
+</html>
