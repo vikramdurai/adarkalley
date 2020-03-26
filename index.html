@@ -126,7 +126,13 @@ $().ready(function() {
 			};
 
 			// process the JSON
-			
+			// fetch our JSON from github
+			// because we can't fetch it locally
+			// cData is code for choice data
+			let cData = "https://raw.githubusercontent.com/vikramdurai/adarkalley/master/choices.json";
+			fetch(cData)
+			  .then(json => console.log(JSON.parse(json)));
+		};
 });
 </script>
 </body>
