@@ -101,6 +101,7 @@ a {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 var startBtn;
+var morning = false;
 $().ready(function() {
 	// needed function
 	function typing_effect(where, what) {
@@ -131,7 +132,71 @@ $().ready(function() {
 			// cData is code for choice data
 			let cData = "https://raw.githubusercontent.com/vikramdurai/adarkalley/master/choices.json";
 			fetch(cData)
-			  .then(json => console.log(JSON.parse(json)));
+			  .then(function(json) {
+			  		json.json().then(function(dat) {
+			  			// time to parse this JSON
+			  			// let's do things the epic way
+			  			function convJSONToHTML(d) {
+				  			function loadChoices(c) {
+			  					c.forEach(function(v) {
+			  						console.log(v);
+			  						let btn = $(`<button>${v.msg}</button><br><br>`);
+			  						if (morning) {
+			  							btn.addClass("btnLight");
+			  						} else {
+			  							btn.addClass("btnDark");
+			  						}
+			  						btn.on("click", convJSONToHTML(v));
+			  						btn.hide();
+			  						$("#log").append(btn);
+			  						btn.fadeIn(1000);
+			  					});
+			  				}
+			  				function forEverySetOfLines(lineDat) {
+			  					for (let i = 0; i < lineDat.length; i++) {
+			  						// this is code in my JSON
+			  						// to signal that we need to make it morning
+			  						if (lineDat[i+1] === "-- morning --") {
+			  							// if it's morning then we change
+			  							// the theme from dark to light
+			  							delayTyping(i, lineDat[i], true, function() {
+			  								$("#log").fadeOut(1000, function() {
+			  									$("#log").empty();
+			  									$("#log").fadeIn("fast");
+					  							$("body").css({
+					  								"color": "black",
+					  								"background-color": "white"
+					  							});
+					  							
+					  							$("h1").text("a light alley");
+					  							document.title = "a light alley";	
+			  								});
+			  							})
+			  						} else if (lineDat[i] === "-- morning --") {
+			  							continue;
+			  						} else if (i === lineDat.length-1) {
+			  							// is this the last?
+			  							delayTyping(i, lineDat[i], true, function(){
+			  								loadChoices(d.choices);
+			  							});
+			  						} else {
+				  						// print as usual
+				  						delayTyping(i, lineDat[i], false, 0);
+			  						}
+			  					}
+			  				}
+			  				return function() {
+			  					$("#log").fadeOut(1000, function() {
+				  					$("#log").empty();
+				  					$("#log").fadeIn("fast");
+				  					console.log("d:", d);
+				  					forEverySetOfLines(d.data);
+			  					})
+			  				};
+			  			};
+			  			convJSONToHTML(dat)();
+			  		});
+			  });
 		};
 });
 </script>
