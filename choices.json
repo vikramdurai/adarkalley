@@ -1,167 +1,171 @@
 {
-	"data": [
-		"You're walking down a dark alley. You don't remember who you are, where you're from, or how you got here.",
-		"You wonder why nobody else is here. It's eerily quiet.",
-		"You feel hungry. There are some trash cans. There is also a cat moving stealthily out of the alley."
-	],
-	"choices": [
-		{
-			"msg": "Scrounge the trash cans for food",
-			"to": {
-				"data": [
-					"You rummaged the trash for eatables.",
-					"After a few minutes, you found a half-empty potato chip packet.",
-					"Not the best meal, but you'll take it.",
-					"You think about your next course of action."
-				],
-				"choices": [
-					{
-						"msg": "Hide in a trash can until morning",
-						"data": [
-							"Not the most comfortable bed in the world, but it works.",
-							"You tuck yourself in.",
-							"-- morning --",
-							"It's morning now. You shake off the rotten tomatoes.",
-							"What will you do?"
-						],
-						"choices": []
-					},
-					{
-						"msg": "Climb the walls of the alley",
-						"to": {
-							"data": [
-								"...suddenly, you're bitten by a spider.",
-								"You find that you can do amazing things..",
-								"..like climbing up walls for example!",
-								"You trek to the terrace of a building.",
-								"Suddenly, you feel weaker.",
-								"THE SPIDER has forsaken you!",
-								"You're stranded! What do you do now?"
-							],
-							"choices": {
-								{
-									"msg": "Try to get bitten by a bat",
-									"data": [
-										"You try to imitate the high-pitched shrieks of bat's prey.",
-										"You succeed! A bat has appeared from nowhere and is now gliding towards your calls.",
-										"You forgot that bats can live in colonies of more than a million.",
-										"Approximately a hundred are now speeding their way towards you."
-									],
-									"choices": [
-										{
-											"msg": "Scream",
-											"data": [
-												"You scream in hopes of scaring the bats away from you.",
-												"It didn't work. Bats are attracted to higher-pitched sounds.",
-												"Approximately five hundred are now wending there way towards you.",
-												"There is no space on this terrace.",
-												"You got bitten.",
-												"Lying down, in ache of these wounds, you feel a fun sensation.",
-												"Despite yourself, you jump off the roof.",
-												"The next thing you remember, your face is towards a brown ceiling.",
-												"This is definitely a house.",
-												"You stumble off the hammock you've been sleeping on and you notice the bandages.",
-												"Someone has been tending to you."
-											],
-											"choices": [
-												{
-													"msg": "Try to escape",
-													"data": [
-														"You try running through the house, desperately searching for an exit.",
-														"You find a medium sized window to jump out of.",
-														"Take the jump?"
-													],
-													"choices": [
-														{
-															"msg": "Do it",
-															"data": [
-																"You jump.",
-																"Regrettably, this is a two story house.",
-																"You manage not to black out.",
-																"You scan your surroundings.",
-																"Trees, pink sky, and a road.",
-																"Is this a coastal region?",
-																"If so, there is hope you can find a settlement, a job, and thereby a house.",
-																"(On further thought you realize that those could have been offered by the house you just exited.)",
-																"Ah well. No turning back now."
-															],
-															"choices": [
-																{
-																	"msg": "Trees",
-																	"data": [
-																		"You ran towards the trees, what were you thinking!?"
-																	]
-																},
-																{
-																	"msg": "Hitchhike"
-																},
-																{
-																	"msg": "Wait at the front door shamefaced"
-																}
-															]
-														}
-													]
-												},
-												{
-													"msg": "Seek your healer"
-												}
-											]
-										}
-										{
-											"msg": "Accept your fate"
-										}
-									]
-								},
-								{
-									"msg": "Try to bite a bat"
-								},
-								{
-									"msg": "Imagine you're a bat"
-								}
-							}
-						}
-					},
-					{
-						"msg": "Ruminate on your life choices",
-						"data": [
-							"Assuming the pose of The Thinker, you sit on a trashcan lid.",
-							"What brought you to this point? Were the decisions you made rational?",
-							"Were the choices you made stupid? How did you get here?",
-							"You dwell on your earlier eagerness to rummage a trash can.",
-							"Did it come to this? Have you no dignity?",
-							"-- morning --",
-							"Pondering these no doubt soul-searching questions you forget it's morning.",
-							"You swear you will uphold your honor no matter what.",
-							"There are now a limited set of options for you."
-						],
-						"choices": []
-					},
-				]
-			}
-		},
-		{
-			"msg": "Follow the cat",
-			"data": [
-				"You follow the cat, through rain, storm, and GLOM OF NIT, until you drop of exhaustion.",
-				"You wake up.",
-				"-- morning --",
-				"It's morning, and the cat has decided to feed you...a fish?",
-				"You ate the fish. You are now bonded with the cat.",
-				"You now posess catlike agility, hearing, and curiosity.",
-				"Catman, what do you do?"
-			],
-			"choices": []
-		},
-		{
-			"msg": "Walk out of the alley",
-			"data": [
-				"You walk out of the alley, determined to find civilization.",
-				"The roads, though gratefully blood-free, are deserted.",
-				"You can't see a car for miles.",
-				"The buildings look like they've been burnt down.",
-				"Where do you go?"
-			],
-			"choices": [],
-		}
-	]
+    "data":[
+        "You're walking down a dark alley. You don't remember who you are, where you're from, or how you got here.",
+        "You wonder why nobody else is here. It's eerily quiet.",
+        "You feel hungry. There are some trash cans. There is also a cat moving stealthily out of the alley."
+    ],
+    "choices":[
+        {
+            "msg":"Scrounge the trash cans for food",
+            "data":[
+                "You rummaged the trash for eatables.",
+                "After a few minutes, you found a half-empty potato chip packet.",
+                "Not the best meal, but you'll take it.",
+                "You think about your next course of action."
+            ],
+            "choices":[
+                {
+                    "msg":"Hide in a trash can until morning",
+                    "data":[
+                        "Not the most comfortable bed in the world, but it works.",
+                        "You tuck yourself in.",
+                        "-- morning --",
+                        "It's morning now. You shake off the rotten tomatoes.",
+                        "What will you do?"
+                    ],
+                    "choices":[
+
+                    ]
+                },
+                {
+                    "msg":"Climb the walls of the alley",
+                    "data":[
+                        "...suddenly, you're bitten by a spider.",
+                        "You find that you can do amazing things..",
+                        "..like climbing up walls for example!",
+                        "You trek to the terrace of a building.",
+                        "Suddenly, you feel weaker.",
+                        "THE SPIDER has forsaken you!",
+                        "You're stranded! What do you do now?"
+                    ],
+                    "choices":[
+                        {
+                            "msg":"Try to get bitten by a bat",
+                            "data":[
+                                "You try to imitate the high-pitched shrieks of bat's prey.",
+                                "You succeed! A bat has appeared from nowhere and is now gliding towards your calls.",
+                                "You forgot that bats can live in colonies of more than a million.",
+                                "Approximately a hundred are now speeding their way towards you."
+                            ],
+                            "choices":[
+                                {
+                                    "msg":"Scream",
+                                    "data":[
+                                        "You scream in hopes of scaring the bats away from you.",
+                                        "It didn't work. Bats are attracted to higher-pitched sounds.",
+                                        "Approximately five hundred are now wending there way towards you.",
+                                        "There is no space on this terrace.",
+                                        "You got bitten.",
+                                        "Lying down, in ache of these wounds, you feel a fun sensation.",
+                                        "Despite yourself, you jump off the roof.",
+                                        "The next thing you remember, your face is towards a brown ceiling.",
+                                        "This is definitely a house.",
+                                        "You stumble off the hammock you've been sleeping on and you notice the bandages.",
+                                        "Someone has been tending to you."
+                                    ],
+                                    "choices":[
+                                        {
+                                            "msg":"Try to escape",
+                                            "data":[
+                                                "You try running through the house, desperately searching for an exit.",
+                                                "You find a medium sized window to jump out of.",
+                                                "Take the jump?"
+                                            ],
+                                            "choices":[
+                                                {
+                                                    "msg":"Do it",
+                                                    "data":[
+                                                        "You jump.",
+                                                        "Regrettably, this is a two story house.",
+                                                        "You manage not to black out.",
+                                                        "You scan your surroundings.",
+                                                        "Trees, pink sky, and a road.",
+                                                        "Is this a coastal region?",
+                                                        "If so, there is hope you can find a settlement, a job, and thereby a house.",
+                                                        "(On further thought you realize that those could have been offered by the house you just exited.)",
+                                                        "Ah well. No turning back now."
+                                                    ],
+                                                    "choices":[
+                                                        {
+                                                            "msg":"Trees",
+                                                            "data":[
+                                                                "You ran towards the trees, what were you thinking!?"
+                                                            ]
+                                                        },
+                                                        {
+                                                            "msg":"Hitchhike"
+                                                        },
+                                                        {
+                                                            "msg":"Wait at the front door shamefaced"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "msg":"Seek your healer"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "msg":"Accept your fate"
+                                }
+                            ]
+                        },
+                        {
+                            "msg":"Try to bite a bat"
+                        },
+                        {
+                            "msg":"Imagine you're a bat"
+                        }
+                    ]
+                },
+                {
+                    "msg":"Ruminate on your life choices",
+                    "data":[
+                        "Assuming the pose of The Thinker, you sit on a trashcan lid.",
+                        "What brought you to this point? Were the decisions you made rational?",
+                        "Were the choices you made stupid? How did you get here?",
+                        "You dwell on your earlier eagerness to rummage a trash can.",
+                        "Did it come to this? Have you no dignity?",
+                        "-- morning --",
+                        "Pondering these no doubt soul-searching questions you forget it's morning.",
+                        "You swear you will uphold your honor no matter what.",
+                        "There are now a limited set of options for you."
+                    ],
+                    "choices":[
+
+                    ]
+                }
+            ]
+        },
+        {
+            "msg":"Follow the cat",
+            "data":[
+                "You follow the cat, through rain, storm, and GLOM OF NIT, until you drop of exhaustion.",
+                "You wake up.",
+                "-- morning --",
+                "It's morning, and the cat has decided to feed you...a fish?",
+                "You ate the fish. You are now bonded with the cat.",
+                "You now posess catlike agility, hearing, and curiosity.",
+                "Catman, what do you do?"
+            ],
+            "choices":[
+
+            ]
+        },
+        {
+            "msg":"Walk out of the alley",
+            "data":[
+                "You walk out of the alley, determined to find civilization.",
+                "The roads, though gratefully blood-free, are deserted.",
+                "You can't see a car for miles.",
+                "The buildings look like they've been burnt down.",
+                "Where do you go?"
+            ],
+            "choices":[
+
+            ]
+        }
+    ]
 }
