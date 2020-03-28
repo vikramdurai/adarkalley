@@ -87,16 +87,36 @@
                                                     ],
                                                     "choices":[
                                                         {
-                                                            "msg":"Trees",
-                                                            "data":[
-                                                                "You ran towards the trees, what were you thinking!?"
+                                                            "msg": "Trees",
+                                                            "data": [
+                                                                "You ran towards the trees, what were you thinking!?",
+                                                                "Maybe you'll be able to live amidst the jungle, like Tarzan.",
+                                                                "You're starting to get thirsty. How will you survive here?",
+                                                                "Suddenly, you see smoke on the horizon."
                                                             ]
                                                         },
                                                         {
-                                                            "msg":"Hitchhike"
+                                                            "msg":"Hitchhike",
+                                                            "data": [
+                                                            	"You stick your thumb out, and wait.",
+                                                            	"And wait.",
+                                                            	"And wait.",
+                                                            	"And wait.",
+                                                            	"-- afternoon --",
+                                                            	"It's now mid-afternoon. You're starting to feel hungry again.",
+                                                            	"Not a car in sight. What do you do?"
+                                                            ]
                                                         },
                                                         {
-                                                            "msg":"Wait at the front door shamefaced"
+                                                            "msg":"Wait at the front door shamefaced",
+                                                            "data": [
+                                                            	"You turn back, and walk back to the front door.",
+                                                            	"Reluctantly, you knock.",
+                                                            	"...the front door is...open?",
+                                                            	"Maybe your healer has decided to go out for a while.",
+                                                            	"You go inside, and turn on the television.",
+                                                            	"What do you watch?"
+                                                            ]
                                                         }
                                                     ]
                                                 }
@@ -104,19 +124,47 @@
                                         },
                                         {
                                             "msg":"Seek your healer"
+                                            "data": [
+                                            	"You decide to seek your healer.",
+                                            	"Walking through the house, it looks like a homely settlement in the wild.",
+                                            	"You can't figure out how you got here. Looks like they took you a long way.",
+                                            	"Then you smell something cooking. You know it's your healer.",
+                                            	"You walk up to the kitchen. She's making a kind of...instant noodles?",
+                                            	"She turns around and says 'Sit down.'"
+                                            ]
                                         }
                                     ]
                                 },
                                 {
-                                    "msg":"Accept your fate"
+                                    "msg":"Accept your fate",
+                                    "data": [
+                                    	"You decide to pay the price for your stupidity.",
+                                    	"Amazingly, the bats just swoop over you.",
+                                    	"You celebrate staying alive.",
+                                    	"You remember you're stranded on the top of a building."
+                                    ]
                                 }
                             ]
                         },
                         {
-                            "msg":"Try to bite a bat"
+                            "msg":"Try to bite a bat",
+                            "data": [
+                            	"You make high-pitched shrieks to attract bats. It works!",
+                            	"In a flash, you grab one out of the air, and suffocate it.",
+                            	"You rip its flesh, tearing into its soul, turning you into..",
+                            	"..a batman.",
+                            	"Batman, your newfound abilities include flying, blindness, and *cough*coronavirus.",
+                            	"What's your next course of action?"
+                            ]
                         },
                         {
-                            "msg":"Imagine you're a bat"
+                            "msg":"Imagine you're a bat",
+                            "data": [
+                            	"You imagine you're a bat. You spread out your arms, and take a running jump over the edge of the building.",
+                            	"You manage to make the jump!",
+                            	"You're making high-pitched cackles, and detect something moving on the street down.",
+                            	"What do you do?"
+                            ]
                         }
                     ]
                 },
@@ -151,12 +199,46 @@
                 "Catman, what do you do?"
             ],
             "choices":[
-
+            	{
+            		"msg": "Use night vision to hunt for food for the morning",
+            		"data": [
+            			"You realize that the fish ain't a renewable food source, the cat needs to eat too.",
+            			"You try to hunt.",
+            			"You see a moving shadow, small enough to be your prey.",
+            			"You stalk the shadow, waiting for the perfect opportunity.",
+            			"You pounce!",
+            			"It's a rat. You ferociously gobble it down to shreds.",
+            			"This meal will last you a while.",
+            			"You curl up next to the cat, both of you purring contentedly.",
+            			"-- morning --",
+            			"It's morning. What do you do?"
+            		]
+            	},
+            	{
+            		"msg": "Freak out",
+            		"data": [
+            			"You freak out. Who wouldn't?",
+            			"After your hysterical fit of crying and laughter, you decide that your one purpose is to get out of this state.",
+            			"You kick the cat away. It caused you to be in this mess. It growls.",
+            			"What can you do?"
+            		]
+            	},
+            	{
+            		"msg": "Caress the cat",
+            		"data": [
+            			"You caress the cat, mumbling sweet nothings such as 'Puss, puss, what a good puss, pussycat...",
+            			"Then you think about whether this cat had a family.",
+            			"You take off your shoes, and put them on the cat. You laugh hysterically.",
+            			"The Adventures of Puss in Boots.",
+            			"You decide to devote your life for the comfort of this cat.",
+            			"Puss seems satisfied."
+            		]
+            	}
             ]
         },
         {
             "msg":"Walk out of the alley",
-            "data":[
+            "data": [
                 "You walk out of the alley, determined to find civilization.",
                 "The roads, though gratefully blood-free, are deserted.",
                 "You can't see a car for miles.",
